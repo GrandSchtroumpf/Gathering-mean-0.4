@@ -1,0 +1,20 @@
+<section data-ng-controller="SidebarController" >
+    <ul class="sidebar-nav">
+        <li ui-sref="settings.profile" class="dropdown-toggle user-header-dropdown-toggle" data-toggle="dropdown">
+            <a>
+                <img data-ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image"/>
+                <span data-ng-bind="authentication.user.displayName"></span>
+            </a>
+        </li>
+        <li>
+            <a ui-sref="missions.list({userId : authentication.user._id})">Missions</a>
+        </li>
+        <li>
+            <a ui-sref="messages.list({userId : authentication.user._id})">Messagerie</a>
+        </li>
+        <li>
+            <a ui-sref="searches.list">Recherche</a>
+        </li>
+
+    </ul>
+</section>

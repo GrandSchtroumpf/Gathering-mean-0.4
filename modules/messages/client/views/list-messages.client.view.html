@@ -1,0 +1,38 @@
+<section>
+    <div class="page-header">
+        <h1>Messages</h1>
+    </div>
+
+    <div class="row form-inline">
+        <a ui-sref="messages.create" class="btn btn-default col-md-2 col-sm-2 col-xs-12">Nouveau message</a>
+    </div>
+
+    <div class="row">
+        <h2>Boîte de réception</h2>
+        <ul ng-repeat="message in messages | limitTo : 10">
+            <li class="ligne" ng-click="showMessage(message)">
+                <ul class="row">
+                    <input type="checkbox" value="message">
+                    <li class="col-md-6">{{message.subject}}</li>
+                    <li class="col-md-3">{{message.userSender.displayName}}</li>
+                    <li class="col-md-2">{{message.sentOn | date:'mediumDate'}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Contenu du mail -->
+    <div class="row">
+        <h2>Contenu du message</h2>
+        <span>De	: {{messageContent.userSender.username}}</span></br>
+        <span>Pour	: <span ng-repeat="recipient in messageContent.userRecipient">{{recipient.username}} - </span></span></br>
+        <span>Sujet	: {{messageContent.subject}}</span></br>
+        <input class="btn btn-default" value="Répondre" data-ng-click="answer(messageContent.userSender)">
+        <input class="btn btn-default" value="Supprimer" data-ng-click="remove(messageContent);">
+        <textarea readonly class="form-control" >{{messageContent.content}}</textarea></br>
+    </div>
+
+
+
+
+</section>

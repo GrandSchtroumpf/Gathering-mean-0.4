@@ -1,0 +1,37 @@
+<section >
+    <div class="container">
+        <div class="row">
+            <h3>Créer une carte</h3>
+            <form class="col-lg-6 col-md-6 col-sm-6 col-xs-8 form-horizontal" data-ng-submit="create()">
+                <input class="form-control" placeholder="Kanji" data-ng-model="cardForm.word.jp"><br/>
+                <input class="form-control" placeholder="Traduction" data-ng-model="cardForm.word.fr"><br/>
+                <input class="form-control" placeholder="Prononciation japonaise" data-ng-model="cardForm.prononciation.jp"><br/>
+<!--
+                <ui-select multiple data-ng-model="cardForm.sentence.fr">
+                    <ui-select-match placeholder="Phrase en français">{{$item.fr}}</ui-select-match>
+                    <ui-select-choices repeat="sentence in sentences | filter: $select.search track by sentence.fr">
+                        {{sentence.fr}}
+                    </ui-select-choices>
+                </ui-select>
+
+                <ui-select multiple data-ng-model="cardForm.sentence.jp">
+                    <ui-select-match placeholder="Phrase en français">{{$item.fr}}</ui-select-match>
+                    <ui-select-choices repeat="sentence in sentences | filter: $select.search track by sentence.jp">
+                        {{sentence.jp}}
+                    </ui-select-choices>
+                </ui-select>
+-->
+                <input class="form-control" placeholder="Phrase en français" data-ng-model="cardForm.sentence.fr"><br/>
+                <input class="form-control" placeholder="Phrase en japonais" data-ng-model="cardForm.sentence.jp"><br/>
+                <label>Son français</label><input type="file">
+                <label>Son japonais</label><input type="file"></br>
+                <input value="Submit" type="submit" class="btn btn-default">
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+

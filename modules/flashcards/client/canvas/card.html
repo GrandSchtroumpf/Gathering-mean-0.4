@@ -1,0 +1,23 @@
+
+<script src="card.js"></script>
+<div>
+    <canvas id="canvas" width="600" height="900"></canvas>
+</div>
+
+<script class="javascript-lazy" type="text/javascript">
+    var canvas, stage, exportRoot;
+
+    canvas = document.getElementById("canvas");
+    exportRoot = new lib.Sansnom3();
+
+    stage = new createjs.Stage(canvas);
+    stage.addChild(exportRoot);
+    stage.update();
+
+    createjs.Ticker.setFPS(lib.properties.fps);
+    //createjs.Ticker.addEventListener("tick", stage);
+
+
+</script>
+
+
