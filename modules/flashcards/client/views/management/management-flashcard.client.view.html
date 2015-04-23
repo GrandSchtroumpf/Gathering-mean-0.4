@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<section>
+    <div class="page-header">
+        <h1>Gérer votre mission ici</h1>
+    </div>
+    <div class="row">
+        <nav class="col-sm-3 col-md-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li data-ui-sref-active="active">
+                    <a data-ui-sref="flashcards.createCard">Créer une carte</a>
+                </li>
+                <li data-ui-sref-active="active">
+                    <a data-ui-sref="flashcards.listCard">Liste des cartes</a>
+                </li>
+                <li data-ui-sref-active="active" data-ng-show="user.provider === 'local'">
+                    <a data-ui-sref="flashcards.password">Change Password</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="col-sm-9 col-md-8 settings-view">
+            <div data-ui-view></div>
+        </div>
+    </div>
+</section>

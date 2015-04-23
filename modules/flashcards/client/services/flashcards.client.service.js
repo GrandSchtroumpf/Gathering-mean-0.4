@@ -12,3 +12,16 @@ angular.module('flashcards').factory('Flashcards', ['$resource',
 	}
 ]);
 
+/*	Permet de charger toutes les sentences	*/
+angular.module('flashcards').factory('allFlashcardsLoader', ['Flashcards', '$q',
+    function(Flashcards, $q) {
+        return function(){
+            var delay = $q.defer();
+            Flashcards.query(function(flashcards){
+                delay.resolve(flashcards);
+            }, function(){
+                delay.reject('Pas de phrases trouvés');
+            });
+            return delay.promise;
+        };
+    }]);

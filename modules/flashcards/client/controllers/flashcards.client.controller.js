@@ -1,10 +1,12 @@
 'use strict';
 
 // Flashcards controller
-angular.module('flashcards').controller('FlashcardsController', ['$scope', '$stateParams', '$state', 'Authentication', 'Flashcards', 'Sentence', 'sentences',
-	function($scope, $stateParams, $state, Authentication, Flashcards, Sentence,  sentences ) {
+angular.module('flashcards').controller('FlashcardsController', ['$scope', '$stateParams', '$state', 'Authentication', 'Flashcards', 'flashcards', 'Sentence', 'sentences',
+	function($scope, $stateParams, $state, Authentication, Flashcards, flashcards, Sentence,  sentences ) {
 		$scope.authentication = Authentication;
         $scope.sentences = sentences.sentences;
+        $scope.flashcards = flashcards;
+
         $scope.cardForm = new Flashcards();
 
         //Check the sentenceof the card
